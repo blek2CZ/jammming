@@ -26,7 +26,6 @@ function App() {
     // Vytvoření kopie playlistTracks
     const newPlaylistTracks = [...playlistTracks];
 
-    // Kontrola existence skladby v playlistu podle id
     if (!newPlaylistTracks.find((savedTrack) => savedTrack.id === track.id)) {
       newPlaylistTracks.push(track);
       setPlaylistTracks(newPlaylistTracks);
