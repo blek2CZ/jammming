@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Jammming
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Toto je webová aplikace vytvořená v Reactu, která umožňuje uživatelům prohledávat knihovnu Spotify, vytvářet vlastní seznam skladeb a ukládat ho na jejich účet Spotify.
 
-## Available Scripts
+This is a React-based web application that allows users to search the Spotify library, create custom playlists, and save them to their Spotify accounts.
 
-In the project directory, you can run:
+## Komponenty / Components
 
-### `npm start`
+### App.js
+Hlavní komponenta, která obsahuje logiku aplikace a propojuje všechny ostatní komponenty.
+Main component that contains the application's logic and connects all other components.
+- Uchovává stav aplikace, včetně vyhledávacího termínu, výsledků vyhledávání, názvu playlistu a skladeb v playlistu.
+Stores the application's state, including the search term, search results, playlist name, and playlist tracks.
+- Obsahuje metody pro vyhledávání skladeb, přidávání skladeb do playlistu, odebírání skladeb z playlistu a ukládání playlistu na Spotify.
+Contains methods for searching for tracks, adding tracks to the playlist, removing tracks from the playlist, and saving the playlist to Spotify.
+- Obsahuje renderování všech podkomponent.
+Renders all subcomponents.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Spotify.js
+Modul pro komunikaci s Spotify API a správu autentizace.
+Module for communicating with the Spotify API and handling authentication.
+- Získává přístupový token pro autorizaci s API.
+Obtains an access token for authorization with the API.
+- Obsahuje metodu pro vyhledávání skladeb na Spotify a metodu pro ukládání playlistu na účet uživatele.
+Contains a method for searching for tracks on Spotify and a method for saving the playlist to the user's account.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Playlist.js
+Komponenta pro zobrazení playlistu a jeho správu.
+Component for displaying the playlist and managing it.
+- Umožňuje uživatelům měnit název playlistu, odebírat skladby a ukládat playlist na Spotify.
+Allows users to change the playlist name, remove tracks, and save the playlist to Spotify.
 
-### `npm test`
+### SearchBar.js
+Komponenta pro vyhledávání skladeb v Spotify.
+Component for searching for tracks on Spotify.
+- Umožňuje uživatelům zadat vyhledávací termín a spustit vyhledávání.
+Allows users to enter a search term and initiate a search.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### SearchResults.js
+Komponenta pro zobrazení výsledků vyhledávání skladeb v Spotify.
+Component for displaying search results of tracks on Spotify.
+- Zobrazuje seznam skladeb a umožňuje uživatelům přidávat sklady do playlistu.
+Displays a list of tracks and allows users to add tracks to the playlist.
 
-### `npm run build`
+### Track.js
+Komponenta pro zobrazení jednoho sklady v seznamu výsledků vyhledávání.
+Component for displaying an individual track in the search results.
+- Zobrazuje informace o skladbě, včetně názvu, interpreta a alba.
+Displays information about the track, including its name, artist, and album.
+- Umožňuje uživatelům přidávat sklady do playlistu nebo je odebírat.
+Allows users to add tracks to the playlist or remove them.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### TrackList.js
+Komponenta pro zobrazení seznamu skladeb.
+Component for displaying a list of tracks.
+- Zobrazuje seznam skladeb a pro každou skladbu používá komponentu `Track`.
+Displays a list of tracks, using the `Track` component for each track.
+- Umožňuje uživatelům přidávat sklady do playlistu nebo je odebírat.
+Allows users to add tracks to the playlist or remove them.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Instalace / Installation
+1. Naklonujte tento repozitář.
+   Clone this repository.
+2. Spusťte příkaz `npm install` k instalaci závislostí.
+   Run the `npm install` command to install the dependencies.
+3. Spusťte aplikaci pomocí `npm start`.
+   Start the application using `npm start`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Použité technologie / Technologies Used
+- React
+- HTML
+- CSS
+- JavaScript
+- HTTP Requests and Responses
+- Authentication
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Licence / License
+Tento projekt je licencován pod [MIT licencí](LICENSE).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project is licensed under the [MIT License](LICENSE).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+MIT Licence:
 
-## Learn More
+Autorská práva (c) [2023] [Petr Fifka]
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Tento software je poskytován pod licencí MIT, což znamená, že můžete tento software používat, kopírovat, upravovat, spojovat, publikovat, distribuovat, sublicencovat a/nebo prodat, ale BEZ ZÁRUKY. Pro více informací si přečtěte text MIT Licence v souboru [LICENSE](LICENSE).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This software is provided under the MIT license, which means you can use, copy, modify, merge, publish, distribute, sublicense, and/or sell this software, but WITHOUT ANY WARRANTY. For more information, please read the MIT License text in the [LICENSE](LICENSE) file.
 
-### Code Splitting
+## Kontakt / Contact
+Pro jakékoli otázky nebo komentáře mě můžete kontaktovat na [blek2@seznam.cz].
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any questions or comments, you can contact me at [blek2@seznam.cz].
